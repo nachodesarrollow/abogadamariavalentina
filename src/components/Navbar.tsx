@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export function Navbar() {
@@ -68,12 +69,18 @@ export function Navbar() {
             </div>
             <button
               type="button"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 text-sm font-semibold text-white hover:bg-white/10 md:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 md:hidden"
               aria-expanded={open}
               aria-controls={panelId}
               onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Cerrar menú" : "Abrir menú"}
             >
-              {open ? "Cerrar" : "Menú"}
+              <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+              {open ? (
+                <X className="h-6 w-6 text-[var(--gold)]" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6 text-[var(--gold)]" aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
