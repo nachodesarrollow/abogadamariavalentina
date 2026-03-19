@@ -59,15 +59,19 @@ export function Hero() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(6,20,39,0.92),rgba(6,20,39,0.55)_35%,rgba(6,20,39,0.15)_70%,rgba(6,20,39,0.05))]" />
                 <div className="absolute inset-0 ring-1 ring-white/10" />
-              </div>
-            </div>
 
-            <div className="mt-4 max-w-lg text-sm leading-6 text-white/70">
-              <span className="text-white/85">
-                Consultas virtuales y presenciales en San Luis.
-              </span>{" "}
-              Si preferís, coordinamos una primera charla para entender el caso y
-              definir los próximos pasos.
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                  <div className="max-w-md border-l-[3px] border-[var(--gold)] pl-4">
+                    <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/70">
+                      Consultas virtuales y presenciales
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/80">
+                      Coordinamos una primera charla para entender el caso y definir
+                      los próximos pasos.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="pointer-events-none absolute -bottom-8 -right-10 hidden h-40 w-40 rounded-full blur-2xl opacity-60 lg:block"

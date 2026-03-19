@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -6,15 +6,13 @@ export function Footer() {
       <div className="container-page py-10">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15">
-              <Image
-                src="/logo-valentina.png"
-                alt="Logo de María Valentina Rothe"
-                fill
-                sizes="48px"
-                className="object-contain p-2.5"
-              />
-            </span>
+            <Link
+              href="#"
+              className="text-[30px] leading-none text-[var(--gold)] [font-family:var(--font-title)] font-semibold tracking-tight hover:opacity-90"
+              aria-label="Ir al inicio"
+            >
+              MVR
+            </Link>
             <div>
               <p className="text-sm font-semibold text-white">
                 Abogada María Valentina Rothe

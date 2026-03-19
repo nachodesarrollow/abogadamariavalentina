@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export function Navbar() {
@@ -7,25 +6,12 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(6,20,39,0.72)] backdrop-blur">
       <div className="container-page">
         <div className="flex h-16 items-center justify-between">
-          <Link href="#inicio" className="flex items-center gap-3">
-            <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15">
-              <Image
-                src="/logo-valentina.png"
-                alt="Logo de María Valentina Rothe"
-                fill
-                sizes="44px"
-                className="object-contain p-2"
-                priority
-              />
-            </span>
-            <span className="flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-tight text-white sm:text-base">
-                María Valentina Rothe
-              </span>
-              <span className="hidden text-xs text-white/65 sm:block">
-                Abogada · San Luis
-              </span>
-            </span>
+          <Link
+            href="#"
+            className="text-[30px] leading-none text-[var(--gold)] [font-family:var(--font-title)] font-semibold tracking-tight hover:opacity-90"
+            aria-label="Ir al inicio"
+          >
+            MVR
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
