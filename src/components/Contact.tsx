@@ -22,10 +22,10 @@ export function Contact() {
               <span className="flex flex-col">
                 <span className="text-white/70">Teléfono / WhatsApp</span>
                 <a
-                  href="tel:+542664311864"
+                  href="tel:+542664205949"
                   className="w-fit font-semibold text-white hover:text-[var(--gold)] hover:underline underline-offset-4"
                 >
-                  266 431-1864
+                  266 420-5949
                 </a>
               </span>
             </li>
@@ -46,7 +46,7 @@ export function Contact() {
           <div className="mt-6">
             <WhatsAppButton
               size="lg"
-              phoneE164NoPlus="5492664311864"
+              phoneE164NoPlus="5492664205949"
               message="Hola María Valentina, quiero hacer una consulta. ¿Cómo podemos coordinar?"
               label="Abrir WhatsApp y consultar"
             />

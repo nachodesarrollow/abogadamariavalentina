@@ -27,7 +27,7 @@ export function Hero() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <WhatsAppButton
                 size="lg"
-                phoneE164NoPlus="5492664311864"
+                phoneE164NoPlus="5492664205949"
                 message="Hola María Valentina, quisiera hacer una consulta. ¿Podemos coordinar?"
                 label="Contactar por WhatsApp"
               />

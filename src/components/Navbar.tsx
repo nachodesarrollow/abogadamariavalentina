@@ -44,7 +44,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
               <WhatsAppButton
-                phoneE164NoPlus="5492664311864"
+                phoneE164NoPlus="5492664205949"
                 message="Hola María Valentina, quisiera hacer una consulta legal. ¿Tenés disponibilidad?"
                 label="Consultar"
               />
