@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -8,10 +9,16 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <Link
               href="#"
-              className="text-[30px] leading-none text-[var(--gold)] [font-family:var(--font-title)] font-semibold tracking-tight hover:opacity-90"
+              className="inline-flex items-center hover:opacity-90"
               aria-label="Ir al inicio"
             >
-              MVR
+              <Image
+                src="/logo.png"
+                alt="MVR"
+                width={180}
+                height={30}
+                className="h-[30px] w-auto"
+              />
             </Link>
             <div>
               <p className="text-sm font-semibold text-white">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -26,10 +27,17 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="#"
-            className="text-[30px] leading-none text-[var(--gold)] [font-family:var(--font-title)] font-semibold tracking-tight hover:opacity-90"
+            className="inline-flex items-center hover:opacity-90"
             aria-label="Ir al inicio"
           >
-            MVR
+            <Image
+              src="/logo.png"
+              alt="MVR"
+              width={180}
+              height={30}
+              priority
+              className="h-[30px] w-auto"
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
