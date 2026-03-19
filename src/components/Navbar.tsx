@@ -1,7 +1,24 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useId, useState } from "react";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export function Navbar() {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const navLink =
+    "w-full border-b border-white/10 py-3 text-base font-semibold text-white/90 hover:text-[var(--gold)]";
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(6,20,39,0.72)] backdrop-blur">
       <div className="container-page">
@@ -49,12 +66,55 @@ export function Navbar() {
                 label="Consultar"
               />
             </div>
-            <Link
-              href="#contacto"
+            <button
+              type="button"
               className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 text-sm font-semibold text-white hover:bg-white/10 md:hidden"
+              aria-expanded={open}
+              aria-controls={panelId}
+              onClick={() => setOpen((v) => !v)}
             >
-              Menú
+              {open ? "Cerrar" : "Menú"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id={panelId}
+        className={[
+          "md:hidden",
+          "overflow-hidden border-t border-white/10 bg-[rgba(6,20,39,0.92)] backdrop-blur",
+          open ? "max-h-[520px]" : "max-h-0",
+          "transition-[max-height] duration-300 ease-out",
+        ].join(" ")}
+      >
+        <div className="container-page py-4">
+          <nav className="flex flex-col">
+            <Link href="#sobre-mi" className={navLink} onClick={() => setOpen(false)}>
+              Sobre mí
             </Link>
+            <Link href="#servicios" className={navLink} onClick={() => setOpen(false)}>
+              Servicios
+            </Link>
+            <Link
+              href="#por-que-elegirme"
+              className={navLink}
+              onClick={() => setOpen(false)}
+            >
+              Por qué elegirme
+            </Link>
+            <Link href="#contacto" className={navLink} onClick={() => setOpen(false)}>
+              Contacto
+            </Link>
+          </nav>
+
+          <div className="mt-4">
+            <WhatsAppButton
+              phoneE164NoPlus="5492664205949"
+              message="Hola María Valentina, quisiera hacer una consulta legal. ¿Tenés disponibilidad?"
+              label="Consultar por WhatsApp"
+              size="lg"
+            />
           </div>
         </div>
       </div>
